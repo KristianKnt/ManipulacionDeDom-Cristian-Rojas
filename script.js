@@ -26,3 +26,24 @@ function obtenerValoresFormulario(event) {
 // Agregar el evento submit al formulario
 const form = document.getElementById("form1");
 form.addEventListener("submit", obtenerValoresFormulario); 
+
+
+//Tarea 3
+function mostrarAlerta() {
+    const obtenerEnlace = document.querySelectorAll('a');
+    const numeroTotal = obtenerEnlace.length;
+    const primerEnlace = obtenerEnlace[0];
+    const ultimoEnlace = obtenerEnlace[numeroTotal - 1];
+    console.log(`Número total de enlaces: ${numeroTotal}`);
+    console.log(`Primer enlace: ${primerEnlace}`);
+    console.log(`Último enlace: ${ultimoEnlace}`);    
+
+   alert(`Número total de enlaces: ${numeroTotal}\nPrimer enlace: ${primerEnlace}\nÚltimo enlace: ${ultimoEnlace}`);
+
+}
+
+const enlace = document.getElementById("botonEnlaces");
+enlace.addEventListener("click", function(event) {
+    event.preventDefault(); // Evita que el enlace navegue a otra página
+    mostrarAlerta();
+});
